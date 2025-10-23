@@ -1,0 +1,1381 @@
+{% load static %}
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Navbar</title>  
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #ff416c, #ff4b2b, #1e3c72, #2a5298);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.logo i {
+    margin-right: 10px;
+    color: #ffd700;
+    font-size: 1.8rem;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+}
+
+nav a i {
+    margin-right: 8px;
+}
+
+nav a:hover {
+    transform: translateY(-3px);
+    color: #ffd700;
+    text-shadow: 0px 0px 8px rgba(255, 215, 0, 0.8);
+}
+
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-play"></i>
+            <span>CodeHold</span>
+        </div>
+        <nav>
+            <a href="#"><i class="fa-solid fa-briefcase"></i> Portfolio</a>
+            <a href="#"><i class="fa-solid fa-download"></i> Downloads</a>
+            <a href="#"><i class="fa-solid fa-clock-rotate-left"></i> History</a>
+            <a href="#"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+            <a href="#"><i class="fa-solid fa-circle-info"></i> About Us</a>
+        </nav>
+    </header>
+</body>
+</html> {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Border Cards</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f0f0f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Card Base */
+.card {
+    position: relative;
+    width: 250px;
+    height: 320px;
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Animated Border Effect */
+.card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(270deg, #ff005e, #fffd00, #00ff99, #00c3ff, #ff00ff);
+    background-size: 800% 800%;
+    border-radius: 16px;
+    z-index: -1;
+    animation: borderAnimation 6s linear infinite;
+}
+
+@keyframes borderAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Inner shadow effect */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: #111;
+    border-radius: 12px;
+    z-index: -1;
+}
+
+/* Card Content */
+.card h2 {
+    margin-top: 20px;
+    font-size: 1.4rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
+.card button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: linear-gradient(90deg, #ff005e, #00ff99);
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.card button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Card One</h2>
+    <p>This is an animated border card with multiple colors.</p>
+    <button>Read More</button>
+</div>
+
+<div class="card">
+    <h2>Card Two</h2>
+    <p>Rainbow gradient animation on the border for a premium look.</p>
+    <button>Explore</button>
+</div>
+
+<div class="card">
+    <h2>Card Three</h2>
+    <p>Reusable design for any project, just change content.</p>
+    <button>Details</button>
+</div>
+
+</body>
+</html> {% endcomment %}
+
+
+
+
+{% comment %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Animated Gradient Border Cards</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 30px;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+/* Card Base */
+.card {
+    position: relative;
+    width: 260px;
+    height: 340px;
+    background: #111;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+/* Hover 3D Tilt */
+.card:hover {
+    transform: rotateY(15deg) rotateX(10deg) scale(1.05);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+}
+
+/* Animated Gradient Border */
+.card::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(270deg, #ff005e, #fffd00, #00ff99, #00c3ff, #ff00ff);
+    background-size: 800% 800%;
+    border-radius: 22px;
+    z-index: -1;
+    animation: borderAnimation 6s linear infinite;
+}
+
+@keyframes borderAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Inner shadow effect */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: #111;
+    border-radius: 18px;
+    z-index: -1;
+}
+
+/* Card Content */
+.card h2 {
+    margin-top: 20px;
+    font-size: 1.4rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
+.card button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: linear-gradient(90deg, #ff005e, #00ff99);
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.card button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h2>3D Card One</h2>
+    <p>This card tilts in 3D when hovered with animated borders.</p>
+    <button>Read More</button>
+</div>
+
+<div class="card">
+    <h2>3D Card Two</h2>
+    <p>Multi-color gradient borders with smooth neon animation.</p>
+    <button>Explore</button>
+</div>
+
+<div class="card">
+    <h2>3D Card Three</h2>
+    <p>Premium UI design ready for any modern project.</p>
+    <button>Details</button>
+</div>
+
+</body>
+</html> {% endcomment %}
+
+
+
+
+
+
+{% comment %} <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3D Dark Neon Background (CSS Glow)</title>
+  <style>
+    /* reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body,#bg{height:100%}
+    body{
+      background:#030305; /* very dark base */
+      color:#eee;
+      overflow:hidden;
+      cursor:auto; /* keep native cursor */
+      font-family:system-ui,Segoe UI,Roboto,Arial;
+    }
+
+    /* stage */
+    #bg{position:fixed;inset:0;z-index:-2;perspective:1200px}
+    .stage{position:relative;width:100%;height:100%;overflow:hidden;transform-style:preserve-3d}
+
+    /* big soft neon blobs */
+    .blob{
+      position:absolute;left:50%;top:50%;
+      width:70vmax;height:70vmax;border-radius:50%;
+      filter:blur(64px) saturate(140%);
+      mix-blend-mode:screen;pointer-events:none;opacity:0.95;
+      will-change:transform,filter,opacity;
+    }
+    .blob::before{
+      content:"";position:absolute;inset:0;border-radius:50%;
+      /* subtle texture */
+      background:radial-gradient(circle at var(--cx,30%) var(--cy,30%),
+        var(--c1, rgba(80,180,255,0.95)) 0%,
+        rgba(10,10,10,0.12) 58%);
+      mix-blend-mode:screen;
+    }
+
+    /* neon hues + animations */
+    .blob.a{--cx:28%;--cy:26%;--c1:rgba(44,154,255,0.95);
+      animation:floatA 22s ease-in-out infinite, hueA 12s linear infinite;}
+    .blob.b{--cx:72%;--cy:62%;--c1:rgba(152,44,255,0.94);
+      animation:floatB 28s ease-in-out infinite, hueB 16s linear infinite;}
+    .blob.c{--cx:40%;--cy:72%;--c1:rgba(255,80,160,0.90);
+      animation:floatC 34s ease-in-out infinite, hueC 20s linear infinite;}
+
+    @keyframes floatA{
+      0%{transform:translate3d(-30%,-20%,-80px) rotateZ(0deg)}
+      25%{transform:translate3d(-24%,-26%,60px) rotateZ(8deg)}
+      50%{transform:translate3d(-36%,-18%,-40px) rotateZ(2deg)}
+      75%{transform:translate3d(-28%,-24%,40px) rotateZ(-6deg)}
+      100%{transform:translate3d(-30%,-20%,-80px) rotateZ(0deg)}
+    }
+    @keyframes floatB{
+      0%{transform:translate3d(20%,-10%,-20px) rotateZ(0deg)}
+      25%{transform:translate3d(18%,-14%,120px) rotateZ(10deg)}
+      50%{transform:translate3d(22%,-8%,-40px) rotateZ(0deg)}
+      75%{transform:translate3d(16%,-16%,80px) rotateZ(-8deg)}
+      100%{transform:translate3d(20%,-10%,-20px) rotateZ(0deg)}
+    }
+    @keyframes floatC{
+      0%{transform:translate3d(-10%,30%,40px) rotateZ(0deg)}
+      25%{transform:translate3d(-8%,34%,-120px) rotateZ(-12deg)}
+      50%{transform:translate3d(-12%,28%,10px) rotateZ(0deg)}
+      75%{transform:translate3d(-6%,32%,-60px) rotateZ(10deg)}
+      100%{transform:translate3d(-10%,30%,40px) rotateZ(0deg)}
+    }
+
+    /* hue rotate to create multi-color neon shift */
+    @keyframes hueA{from{filter:hue-rotate(0deg) saturate(140%)} to{filter:hue-rotate(360deg) saturate(140%)}}
+    @keyframes hueB{from{filter:hue-rotate(40deg) saturate(140%)} to{filter:hue-rotate(400deg) saturate(140%)}}
+    @keyframes hueC{from{filter:hue-rotate(-30deg) saturate(140%)} to{filter:hue-rotate(330deg) saturate(140%)}}
+
+    /* neon bubbles (glow using box-shadow) */
+    .bubble{
+      position:absolute;border-radius:50%;
+      background:rgba(255,255,255,0.02);
+      box-shadow:
+        0 0 8px rgba(255,255,255,0.03),
+        0 0 18px var(--glow, rgba(120,100,255,0.14)),
+        0 0 40px var(--glow, rgba(120,100,255,0.08));
+      backdrop-filter: blur(2px);
+      will-change:transform,opacity,box-shadow;
+      pointer-events:none;
+      animation:rise var(--dur,10s) linear infinite;
+      opacity:0;
+    }
+    @keyframes rise{
+      0%{transform:translateY(100vh) scale(0.25);opacity:0}
+      12%{opacity:1}
+      100%{transform:translateY(-12vh) scale(1);opacity:0}
+    }
+
+    /* neon line streaks */
+    .line{
+      position:absolute;width:2px;border-radius:2px;
+      height:var(--h,80px);
+      background:linear-gradient(to bottom,
+        rgba(255,255,255,0.0) 0%,
+        var(--col, rgba(120,100,255,0.28)) 15%,
+        var(--col, rgba(120,100,255,0.55)) 50%,
+        var(--col, rgba(120,100,255,0.28)) 85%,
+        rgba(255,255,255,0.0) 100%);
+      filter:blur(6px);
+      mix-blend-mode:screen;
+      opacity:0;
+      animation:riseLine var(--ldur,9s) linear infinite;
+      will-change:transform,opacity,filter;
+      pointer-events:none;
+    }
+    @keyframes riseLine{
+      0%{transform:translateY(100vh) scaleY(0.6);opacity:0}
+      8%{opacity:1}
+      100%{transform:translateY(-10vh) scaleY(1);opacity:0}
+    }
+
+    /* center dark vignette to keep contrast */
+    .stage::after{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(ellipse at center, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.95) 100%);
+      mix-blend-mode:multiply;pointer-events:none;
+    }
+
+    /* optional demo content on top (so you can see contrast) */
+    .demo{
+      position:relative;z-index:4;padding:36px;color:#f3f3f3;
+      text-shadow:0 6px 30px rgba(0,0,0,0.6);
+    }
+
+    /* responsiveness */
+    @media (max-width:900px){ .blob{filter:blur(82px);} .line{filter:blur(8px)} }
+    @media (max-width:480px){ .blob{filter:blur(110px);} .line{display:none} }
+
+  </style>
+</head>
+<body>
+  <div id="bg">
+    <div class="stage" id="stage">
+      <div class="blob a" id="blobA"></div>
+      <div class="blob b" id="blobB"></div>
+      <div class="blob c" id="blobC"></div>
+    </div>
+  </div>
+
+  <!-- demo overlay so you can preview content on top -->
+  <div class="demo">
+    <h1>Dark Neon Background</h1>
+    <p>Blobs, glowing bubbles and neon streaks — CSS glow only.</p>
+  </div>
+
+  <script>
+    /* lightweight setup: size blobs + spawn neon bubbles & lines */
+    (function(){
+      const stage = document.getElementById('stage');
+      const blobs = [document.getElementById('blobA'), document.getElementById('blobB'), document.getElementById('blobC')];
+
+      function sizeBlobs(){
+        const vw = Math.max(window.innerWidth, window.innerHeight);
+        const base = Math.min(110, Math.max(50, vw/7));
+        blobs.forEach(b=>{ b.style.width = `${base}vmax`; b.style.height = `${base}vmax`; });
+      }
+      window.addEventListener('resize', sizeBlobs);
+      sizeBlobs();
+
+      // subtle mouse parallax
+      window.addEventListener('mousemove', e=>{
+        const cx = (e.clientX / window.innerWidth) - 0.5;
+        const cy = (e.clientY / window.innerHeight) - 0.5;
+        blobs[0].style.transform = `translate3d(${ -30 + cx*12 }%, ${ -20 + cy*12 }%, -80px)`;
+        blobs[1].style.transform = `translate3d(${ 20 + cx*14 }%, ${ -10 + cy*10 }%, -20px)`;
+        blobs[2].style.transform = `translate3d(${ -10 + cx*10 }%, ${ 30 + cy*20 }%, 40px)`;
+      }, {passive:true});
+
+      /* spawn neon bubbles with randomized neon colors */
+      const bubbleCount = 18;
+      const neonPal = [
+        'rgba(80,200,255,0.18)',  // cyan
+        'rgba(160,80,255,0.18)',  // purple
+        'rgba(255,90,170,0.18)',  // pink
+        'rgba(80,255,200,0.16)'   // teal
+      ];
+      for(let i=0;i<bubbleCount;i++){
+        const b = document.createElement('div');
+        b.className = 'bubble';
+        const size = Math.random()*12 + 6; // 6..18px
+        b.style.width = `${size}px`;
+        b.style.height = `${size}px`;
+        b.style.left = `${Math.random()*100}%`;
+        // start slightly below stage for smooth entry
+        b.style.top = `${90 + Math.random()*20}%`;
+        // neon glow color
+        const col = neonPal[Math.floor(Math.random()*neonPal.length)];
+        b.style.setProperty('--glow', col);
+        // random duration and delay
+        const dur = 8 + Math.random()*10; // 8..18s
+        const delay = Math.random()*-12;  // negative delay for staggered start
+        b.style.animationDuration = `${dur}s`;
+        b.style.animationDelay = `${delay}s`;
+        b.style.opacity = '0';
+        stage.appendChild(b);
+      }
+
+      /* spawn neon vertical streak lines */
+      const lineCount = 12;
+      for(let i=0;i<lineCount;i++){
+        const L = document.createElement('div');
+        L.className = 'line';
+        L.style.left = `${Math.random()*100}%`;
+        L.style.top = `${95 + Math.random()*10}%`;
+        const h = 40 + Math.random()*160; // 40..200px
+        L.style.setProperty('--h', `${h}px`);
+        const col = neonPal[Math.floor(Math.random()*neonPal.length)];
+        // make the gradient color use a translucent version
+        L.style.setProperty('--col', col);
+        const dur = 6 + Math.random()*10;
+        const delay = Math.random()*-10;
+        L.style.setProperty('--ldur', `${dur}s`);
+        L.style.animationDuration = `${dur}s`;
+        L.style.animationDelay = `${delay}s`;
+        stage.appendChild(L);
+      }
+
+      // performance note: remove if user navigates away
+      window.addEventListener('visibilitychange', ()=>{
+        if(document.hidden){
+          // pause animations by reducing motion (optional)
+          stage.style.opacity = '0.97';
+        } else {
+          stage.style.opacity = '1';
+        }
+      });
+
+    })();
+  </script>
+</body>
+</html> {% endcomment %}
+
+
+{% comment %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern 4 Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#0f172a;
+      --muted:#94a3b8;
+      --text:#e2e8f0;
+      --accent: #7c3aed; /* violet */
+      --accent-2: #06b6d4; /* cyan */
+      --ring: 0 0 0 0 rgba(124,58,237,0.0);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,.25), transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, rgba(6,182,212,.2), transparent 60%),
+        var(--bg);
+      color:var(--text);
+    }
+    .wrap{max-width:1200px;margin:0 auto;padding:48px 20px}
+    header{display:flex;gap:16px;align-items:flex-start;justify-content:space-between;margin-bottom:28px}
+    h1{font-size:clamp(1.5rem,2vw+1rem,2.2rem);margin:0;font-weight:800;letter-spacing:-0.02em}
+    .sub{color:var(--muted);max-width:60ch;line-height:1.6}
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap:22px;
+    }
+    @media (max-width:1100px){
+      .cards{grid-template-columns: repeat(3, minmax(0,1fr));}
+    }
+    @media (max-width:800px){
+      .cards{grid-template-columns: repeat(2, minmax(0,1fr));}
+    }
+    @media (max-width:520px){
+      .cards{grid-template-columns:1fr;}
+    }
+
+    .card{
+      position:relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)) padding-box,
+                  linear-gradient(140deg, rgba(124,58,237,.6), rgba(6,182,212,.6)) border-box;
+      border:1px solid transparent;
+      border-radius:20px;
+      overflow:hidden;
+      padding:20px;
+      box-shadow: 0 6px 30px rgba(0,0,0,.28);
+      transform: translateY(0);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      backdrop-filter: blur(6px);
+    }
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 14px 40px rgba(0,0,0,.45);
+      border-color: rgba(255,255,255,0.18);
+    }
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:.78rem;color:#e9d5ff;background:rgba(124,58,237,.15);
+      border:1px solid rgba(124,58,237,.35);
+      padding:6px 10px;border-radius:999px;font-weight:600
+    }
+    .art{
+      margin:10px 0 14px;height:130px;border-radius:14px;
+      background: radial-gradient(60% 80% at 30% 30%, rgba(124,58,237,.5), transparent 60%),
+                  radial-gradient(60% 80% at 70% 60%, rgba(6,182,212,.45), transparent 60%),
+                  #0b142b;
+      display:grid;place-items:center;overflow:hidden;position:relative
+    }
+    .art svg{width:80px;height:80px;opacity:.95}
+
+    .title{font-size:1.1rem;font-weight:700;margin:8px 0 6px}
+    .desc{color:var(--muted);font-size:.95rem;line-height:1.6}
+
+    .meta{display:flex;align-items:center;gap:12px;margin:14px 0 10px;color:#cbd5e1;font-size:.85rem}
+    .dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 0 3px rgba(124,58,237,.15)}
+
+    .actions{display:flex;gap:10px;margin-top:14px}
+    .btn{appearance:none;border:none;cursor:pointer;font-weight:700;
+      padding:10px 14px;border-radius:12px;background:#111827;color:#e5e7eb
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color:white
+    }
+    .btn:focus{outline:none;box-shadow:0 0 0 4px rgba(124,58,237,.33)}
+    .btn:hover{filter:brightness(1.05)}
+
+    /* subtle animated glow behind each card */
+    .card::after{
+      content:"";position:absolute;inset:auto -40% -40% auto;width:200px;height:200px;
+      background: radial-gradient(circle at center, rgba(124,58,237,.25), transparent 60%);
+      filter: blur(30px);pointer-events:none;transition:transform .4s ease
+    }
+    .card:hover::after{transform:translate(-10px, -10px)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Beautiful, Responsive Cards</h1>
+        <p class="sub">A clean 4‑card layout with subtle glass effect, gradient borders, and smooth hover states. Resize the window to see the grid adapt.</p>
+      </div>
+    </header>
+
+    <section class="cards">
+      <!-- Card 1 -->
+      <article class="card">
+        <span class="badge">New • UI Kit</span>
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="white" stroke-opacity=".85" stroke-width="1.2"/>
+            <path d="M12 7.5l4 2.25v4.5L12 16.5l-4-2.25v-4.5L12 7.5z" fill="white" fill-opacity=".12"/>
+          </svg>
+        </div>
+        <h3 class="title">Design System</h3>
+        <p class="desc">Starter components with sensible defaults to build fast and stay consistent across pages.</p>
+        <div class="meta"><span class="dot"></span> 24 components • MIT</div>
+        <div class="actions">
+          <button class="btn primary">Get Started</button>
+          <button class="btn">Preview</button>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <span class="badge">Pro • Tutorials</span>
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="8" stroke="white" stroke-opacity=".85" stroke-width="1.2"/>
+            <path d="M10 8l6 4-6 4V8z" fill="white" fill-opacity=".2"/>
+          </svg>
+        </div>
+        <h3 class="title">Video Lessons</h3>
+        <p class="desc">Short, practical clips that focus on real‑world UI patterns and accessibility tips.</p>
+        <div class="meta"><span class="dot"></span> 12 videos • 45 mins</div>
+        <div class="actions">
+          <button class="btn primary">Watch</button>
+          <button class="btn">Syllabus</button>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <span class="badge">Free • Assets</span>
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="5" width="16" height="12" rx="2" stroke="white" stroke-opacity=".85" stroke-width="1.2"/>
+            <path d="M4 9h16" stroke="white" stroke-opacity=".2"/>
+            <path d="M8 13h8" stroke="white" stroke-opacity=".6" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <h3 class="title">Mockups Pack</h3>
+        <p class="desc">High‑res device frames to showcase your app in websites, decks, and social posts.</p>
+        <div class="meta"><span class="dot"></span> 6 devices • PNG/SVG</div>
+        <div class="actions">
+          <button class="btn primary">Download</button>
+          <button class="btn">Details</button>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card">
+        <span class="badge">Beta • API</span>
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 12h16" stroke="white" stroke-opacity=".85" stroke-width="1.3"/>
+            <path d="M12 4v16" stroke="white" stroke-opacity=".85" stroke-width="1.3"/>
+            <circle cx="12" cy="12" r="9" stroke="white" stroke-opacity=".2"/>
+          </svg>
+        </div>
+        <h3 class="title">Public API</h3>
+        <p class="desc">Fast, well‑documented endpoints to power dashboards and automation workflows.</p>
+        <div class="meta"><span class="dot"></span> v1.0 • JSON/REST</div>
+        <div class="actions">
+          <button class="btn primary">Docs</button>
+          <button class="btn">Curl</button>
+        </div>
+      </article>
+    </section>
+  </div>
+</body>
+</html> {% endcomment %}
+{% comment %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Carousel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      white-space: nowrap;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      animation: scroll-left 20s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .card {
+      flex: 0 0 250px;
+      margin: 10px;
+      background: #222;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 10px;
+    }
+
+    .card-content h3 {
+      font-size: 16px;
+      margin: 0 0 5px;
+      color: #ffcc00;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      color: #aaa;
+      margin: 0 0 10px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 8px 12px;
+      background: #ff4747;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .download-btn:hover {
+      background: #ff1a1a;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎬 Video Carousel</h2>
+  
+
+</body>
+</html> {% endcomment %}
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Carousel</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+    .slides {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    /* Buttons */
+    .btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 50%;
+    }
+    .btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .prev {
+      left: 20px;
+    }
+    .next {
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel">
+  <div class="slides">
+    <img src="{% static 'thumbnail/thumb1.jpg' %}" alt="Slide 1">
+    <img src="{% static 'thumbnail/thumb2.jpeg' %}" alt="Slide 2">
+    <img src="{% static 'thumbnail/thumb3.jpg' %}" alt="Slide 3">
+    <img src="{% static 'thumbnail/thumb1.jpg' %}" alt="Slide 4">
+  </div>
+  <button class="btn prev">&#10094;</button>
+  <button class="btn next">&#10095;</button>
+</div>
+
+<script>
+  const slides = document.querySelector('.slides');
+  const images = document.querySelectorAll('.slides img');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+  let index = 0;
+
+  function showSlide(i) {
+    index = (i + images.length) % images.length;
+    slides.style.transform = `translateX(${-index * 100}%)`;
+  }
+
+  prev.addEventListener('click', () => showSlide(index - 1));
+  next.addEventListener('click', () => showSlide(index + 1));
+
+  // Auto slide
+  setInterval(() => {
+    showSlide(index + 1);
+  }, 3000);
+</script>
+
+</body>
+</html> {% endcomment %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fast & Free YouTube Video Downloader</title>
+  <meta name="description" content="Paste your YouTube link, choose quality, and download in a sleek 3D interface." />
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --card: rgba(255,255,255,0.06);
+      --glass: rgba(255,255,255,0.12);
+      --accent: #7dd3fc; /* sky-300 */
+      --accent-2: #a78bfa; /* violet-400 */
+      --text: #e6eaf2;
+      --muted: #9aa4b2;
+      --success: #34d399;
+      --error: #fb7185;
+      --warning: #fbbf24;
+      --shadow: 0 10px 30px rgba(0,0,0,.4);
+      --radius-2xl: 24px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 10% 10%, #0e1628 0%, #0b0f1a 40%),
+                  radial-gradient(1200px 800px at 90% 90%, #0e1322 0%, #0b0f1a 40%),
+                  conic-gradient(from 180deg at 50% 50%, #0b0f1a, #0b0f1a);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* Animated floating orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(40px) saturate(160%);
+      opacity: .35;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      will-change: transform, opacity;
+      z-index: 0;
+    }
+    .orb.orb-1 { width: 360px; height: 360px; left: -60px; top: -60px; background: radial-gradient(circle, #22d3ee, transparent 60%); animation: float1 11s ease-in-out infinite; }
+    .orb.orb-2 { width: 420px; height: 420px; right: -80px; bottom: -80px; background: radial-gradient(circle, #a78bfa, transparent 60%); animation: float2 13s ease-in-out infinite; }
+    .orb.orb-3 { width: 280px; height: 280px; right: 10%; top: 15%; background: radial-gradient(circle, #34d399, transparent 60%); animation: float3 17s ease-in-out infinite; opacity:.28; }
+
+    @keyframes float1 { 0%,100%{ transform: translateY(0) translateX(0);} 50%{ transform: translateY(30px) translateX(20px);} }
+    @keyframes float2 { 0%,100%{ transform: translateY(0) translateX(0);} 50%{ transform: translateY(-25px) translateX(-15px);} }
+    @keyframes float3 { 0%,100%{ transform: translateY(0) translateX(0);} 50%{ transform: translateY(40px) translateX(-10px);} }
+
+    .wrap {
+      position: relative;
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 32px 16px 48px;
+      z-index: 1;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .title {
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      line-height: 1.15;
+      font-size: clamp(28px, 5vw, 44px);
+      margin: 0 0 10px;
+      background: linear-gradient(130deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 20px rgba(125,211,252,.15), 0 0 30px rgba(167,139,250,.12);
+    }
+
+    .subtitle {
+      font-size: clamp(14px, 2.3vw, 18px);
+      color: var(--muted);
+      margin: 0 auto;
+      max-width: 780px;
+    }
+
+    /* 3D Card */
+    .card-3d {
+      width: min(880px, 94vw);
+      border-radius: var(--radius-2xl);
+      background: linear-gradient(160deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      backdrop-filter: blur(14px) saturate(120%);
+      -webkit-backdrop-filter: blur(14px) saturate(120%);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,0.06) inset;
+      position: relative;
+      padding: 28px;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      transition: transform .2s ease;
+    }
+
+    .shine {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(600px 300px at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,0.22), transparent 40%);
+      pointer-events: none;
+      opacity: .35;
+      mix-blend-mode: overlay;
+      transition: opacity .2s ease;
+    }
+
+    .card-3d:hover .shine { opacity: .55; }
+
+    .row { display: grid; gap: 16px; grid-template-columns: 1fr; }
+    @media (min-width: 720px) { .row { grid-template-columns: 1fr auto; align-items: end; } }
+
+    label { font-size: 14px; color: var(--muted); margin-bottom: 8px; display: inline-block; }
+
+    .input {
+      display: grid;
+      gap: 10px;
+    }
+
+    .field {
+      display: flex; align-items: center;
+      border-radius: 16px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 14px 16px;
+      box-shadow: inset 0 -2px 8px rgba(0,0,0,.25);
+    }
+
+    .field input {
+      background: transparent; border: 0; outline: 0; color: var(--text);
+      width: 100%; font-size: 16px;
+    }
+
+    .field .prefix { color: var(--muted); margin-right: 10px; font-size: 18px; }
+
+    .qualities { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .chip {
+      border: 1px solid rgba(255,255,255,0.16);
+      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px; color: var(--text);
+      box-shadow: 0 4px 12px rgba(0,0,0,.25);
+      cursor: pointer;
+      user-select: none;
+      transition: transform .12s ease, background .2s ease, border-color .2s ease;
+    }
+    .chip:hover { transform: translateY(-1px); }
+    .chip.active {
+      background: linear-gradient(180deg, rgba(125,211,252,0.35), rgba(167,139,250,0.25));
+      border-color: rgba(125,211,252,0.55);
+      box-shadow: 0 8px 22px rgba(125,211,252,.25);
+    }
+
+    .actions { display: flex; gap: 12px; align-items: center; justify-content: flex-start; flex-wrap: wrap; }
+
+    .btn {
+      appearance: none; border: 0; outline: 0; cursor: pointer;
+      border-radius: 16px;
+      padding: 14px 18px; font-weight: 700; letter-spacing: .3px;
+      color: #06121f; background: linear-gradient(120deg, #7dd3fc, #a78bfa);
+      box-shadow: 0 12px 34px rgba(125,211,252,.3), 0 6px 18px rgba(167,139,250,.25);
+      transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
+    }
+    .btn:active { transform: translateY(1px) scale(.99); }
+
+    .btn.ghost {
+      background: transparent; color: var(--text); font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 6px 16px rgba(0,0,0,.25);
+    }
+
+    .status { font-size: 14px; color: var(--muted); min-height: 22px; }
+
+    .divider {
+      height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.16), rgba(255,255,255,0));
+      margin: 18px 0 6px;
+    }
+
+    .meta {
+      display: grid; gap: 10px; grid-template-columns: 1fr 1fr 1fr; margin-top: 10px;
+    }
+    .meta .item {
+      background: var(--glass); border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 16px; padding: 12px 14px; text-align: center; font-size: 13px; color: var(--muted);
+    }
+
+    footer { margin-top: 22px; text-align: center; color: var(--muted); font-size: 12px; }
+
+    /* Toast */
+    .toast {
+      position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(20px);
+      background: rgba(12, 18, 34, .85);
+      color: var(--text);
+      padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      opacity: 0; pointer-events: none; transition: transform .2s ease, opacity .2s ease;
+      z-index: 50;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* Accessibility focus */
+    :focus-visible { outline: 2px dashed rgba(125,211,252,.8); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="wrap">
+    <header>
+      <h1 class="title">Download YouTube Videos Instantly</h1>
+      <p class="subtitle">Paste your YouTube link, choose the quality you want, and hit download. No software required — just a clean, fast, and <strong>3D</strong> experience.</p>
+    </header>
+
+    <section class="card-3d" id="card3d" aria-label="YouTube downloader form">
+      <div class="shine" aria-hidden="true"></div>
+
+      <div class="row">
+        <div class="input">
+          <label for="yt-url">YouTube Link</label>
+          <div class="field">
+            <span class="prefix" aria-hidden="true">🔗</span>
+            <input id="yt-url" name="yt-url" type="url" placeholder="https://www.youtube.com/watch?v=..." autocomplete="off" spellcheck="false" aria-describedby="status" />
+          </div>
+          <div class="status" id="status">Paste your video URL to get started.</div>
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="downloadBtn" aria-label="Download video">Download</button>
+          <button class="btn ghost" id="pasteBtn" aria-label="Paste from clipboard" title="Paste from clipboard">Paste</button>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <label>Choose Quality</label>
+      <div class="qualities" id="qualities">
+        <div class="chip" data-quality="144p">144p</div>
+        <div class="chip" data-quality="360p">360p</div>
+        <div class="chip active" data-quality="720p">720p HD</div>
+        <div class="chip" data-quality="1080p">1080p Full HD</div>
+        <div class="chip" data-quality="audio">Audio MP3</div>
+      </div>
+
+      <div class="meta">
+        <div class="item">Secure • No signup</div>
+        <div class="item">Fast processing</div>
+        <div class="item">Works on mobile</div>
+      </div>
+    </section>
+
+    <footer>
+      By using this tool, you confirm you have rights to download this content. Respect YouTube & creator policies.
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // --- 3D tilt & shine effect ---
+    const card = document.getElementById('card3d');
+    const shine = card.querySelector('.shine');
+    let bounds;
+
+    function calcBounds(){ bounds = card.getBoundingClientRect(); }
+    calcBounds();
+    window.addEventListener('resize', calcBounds);
+
+    card.addEventListener('mousemove', (e) => {
+      const x = e.clientX - bounds.left;
+      const y = e.clientY - bounds.top;
+      const rx = ((y / bounds.height) - 0.5) * -8; // rotateX
+      const ry = ((x / bounds.width) - 0.5) * 10;  // rotateY
+      card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+      card.style.transition = 'transform .06s ease';
+      shine.style.setProperty('--mx', `${(x / bounds.width) * 100}%`);
+      shine.style.setProperty('--my', `${(y / bounds.height) * 100}%`);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      card.style.transition = 'transform .3s ease';
+    });
+
+    // --- Quality chips ---
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    let selectedQuality = '720p';
+    chips.forEach(ch => ch.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      ch.classList.add('active');
+      selectedQuality = ch.dataset.quality;
+      speak(`Quality ${ch.textContent} selected`);
+    }));
+
+    // --- Paste from clipboard ---
+    const pasteBtn = document.getElementById('pasteBtn');
+    pasteBtn.addEventListener('click', async () => {
+      try {
+        const text = await navigator.clipboard.readText();
+        if (text) {
+          urlInput.value = text.trim();
+          setStatus('Link pasted from clipboard.', 'ok');
+        } else {
+          setStatus('Clipboard is empty.', 'warn');
+        }
+      } catch (e) {
+        setStatus('Clipboard access denied. Paste manually (Ctrl/⌘+V).', 'warn');
+      }
+    });
+
+    // --- URL & Download handler ---
+    const urlInput = document.getElementById('yt-url');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    downloadBtn.addEventListener('click', async () => {
+      const url = urlInput.value.trim();
+      if (!isYouTubeUrl(url)) {
+        setStatus('Please enter a valid YouTube URL.', 'err');
+        shake(card);
+        return;
+      }
+      setStatus('Preparing your download…', 'ok');
+
+      // TODO: Replace this with your backend call
+      // Example (adjust endpoint):
+      // const res = await fetch('/api/download', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url, quality: selectedQuality }) });
+      // const data = await res.json();
+      // if (data?.fileUrl) window.location.href = data.fileUrl;
+
+      // Mock demo only
+      await sleep(900);
+      toast(`Requested ${selectedQuality.toUpperCase()} for: ${shorten(url, 60)}`);
+    });
+
+    function isYouTubeUrl(url) {
+      const re = /^(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[\w-]{6,}/i;
+      return re.test(url);
+    }
+
+    function sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
+
+    function shorten(str, max){ return str.length > max ? str.slice(0, max-3) + '…' : str; }
+
+    const statusEl = document.getElementById('status');
+    function setStatus(msg, type) {
+      statusEl.textContent = msg;
+      let color = 'var(--muted)';
+      if (type === 'ok') color = 'var(--success)';
+      if (type === 'err') color = 'var(--error)';
+      if (type === 'warn') color = 'var(--warning)';
+      statusEl.style.color = color;
+    }
+
+    // --- Subtle shake on error ---
+    function shake(el){
+      el.animate([
+        { transform: 'translateX(0)' },
+        { transform: 'translateX(-6px)' },
+        { transform: 'translateX(6px)' },
+        { transform: 'translateX(0)' }
+      ], { duration: 200, iterations: 1 });
+    }
+
+    // --- Toast ---
+    const toastEl = document.getElementById('toast');
+    function toast(msg){
+      toastEl.textContent = msg;
+      toastEl.classList.add('show');
+      setTimeout(() => toastEl.classList.remove('show'), 2200);
+    }
+
+    // --- A11y: Enter to submit ---
+    urlInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') downloadBtn.click();
+    });
+
+    // --- Optional voice feedback ---
+    function speak(text){
+      try { if ('speechSynthesis' in window) window.speechSynthesis.speak(new SpeechSynthesisUtterance(text)); } catch(_){}
+    }
+  </script>
+</body>
+</html>
