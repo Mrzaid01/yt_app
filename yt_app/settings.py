@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-xv4_=s-r2%o-0f#7q!dv7&v@-ppa8-o0$@jzstvxaiv!+9f^j#
 DEBUG = False
 # STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
-ALLOWED_HOSTS = ['codehold.pythonanywhere.com']
+ALLOWED_HOSTS = ['yt-app-t8q4.onrender.com', 'localhost', '127.0.0.1']
+
 # ALLOWED_HOSTS = ['*']
 
 # Application definition
